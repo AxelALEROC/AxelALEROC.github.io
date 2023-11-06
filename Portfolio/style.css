@@ -164,6 +164,54 @@ body{
     margin: 10px 0;
 }
 
+
+/* Estilo para proyectos*/
+/*Nuevo slide*/
+
+.proyecto__articles {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.subtitle-tec {
+    text-align:center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+.display-container {
+    margin-right: 20px;
+}
+
+.proyecto__img{
+    width: 100%;
+    position: relative;
+    border-radius: 5%;
+}
+
+.description {
+    margin-left: 2rem;
+}
+
+
+.display-container {
+    position: relative;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+
+.display-left {
+    left: 0;
+}
+
+.display-right {
+    right: 0;
+}
+
+/*Footer*/
+
 .footer{
     background-color: var(--background);
 }
@@ -202,7 +250,7 @@ body{
 }
 
 @media (min-width:768px) {
-    
+
 
     .nav__menu{
         display: none;
@@ -312,7 +360,13 @@ body{
         gap: 1.5rem;
     }
 
-   
+    .proyecto__articles {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .proyecto__img{
+        width: 680px;
+    }
     /* footer */
 
     .footer{
@@ -322,5 +376,4 @@ body{
     
 
 }
-
 
