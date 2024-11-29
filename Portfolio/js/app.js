@@ -17,7 +17,7 @@ const projectData = {
       autor: "ALEROC JUN 2024"
   },
   2: {
-      img: "/assets/imgAxel.jpeg",
+      img: "/assets/java.svg",
       category: "Let’s Be Encrypt",
       heading: "Encriptamiento de contraseñas Online",
       resume: "Proyecto enfocado en encriptar contraseñas de manera segura.",
