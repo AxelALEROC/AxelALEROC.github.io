@@ -37,7 +37,7 @@ body{
 }
 
 .nav__menu{
-    background-color: var(--orange);
+    background-color: #6bace5;
     width: 35px;
     cursor: pointer;
     z-index: 100;
@@ -50,24 +50,27 @@ body{
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: var(--orange);
+    background-color: #1e1e1e;
     padding: 80px 0;
 
     display: grid;
     place-content: center;
     text-align: left;
     gap: 2.5rem;
-    font-size: 32px;;
+    font-size: 32px;
 
+    margin-left: 10px;
     list-style: none;
 
     transform: translate(0%, -100%);
     transition: transform .3s;
-    z-index: 1;
+    z-index: 3;
 }
+
 
 .nav__list--show{
     transform: translate(0);
+    height: 100%;
 }
 
 .nav__link{
@@ -343,7 +346,7 @@ body{
 /*Footer*/
 
 .footer{
-    background-color: var(--background);
+    background-color: #1e1e1e;
 }
 
 .footer__contact{
@@ -379,27 +382,200 @@ body{
     width: 28px;
 }
 
+/*region darkmode*/
+
+/* Fondo principal y secundario */
+body.dark-mode {
+    background-color: #121212; /* Fondo principal */
+    color: #E0E0E0; /* Texto principal */
+}
+
+
+body.dark-mode .about{
+    background-color: #1E1E1E; /* Fondo principal */
+    color: #E0E0E0; /* Texto principal */
+}
+
+body.dark-mode .position-rel {
+    background-color: #1E1E1E; /* Fondo secundario */
+    color: #E0E0E0; /* Texto principal */
+}
+
+/* Texto secundario y deshabilitado */
+body.dark-mode .text-secondary {
+    color: #B3B3B3;
+}
+
+body.dark-mode .text-disabled {
+    color: #757575;
+}
+
+/* Bordes y divisores */
+body.dark-mode .divider {
+    border-color: #292929;
+}
+
+/* Colores de acento */
+body.dark-mode a {
+    color: #64B5F6; /* Azul cian para enlaces */
+}
+
+/*endregion darkmode*/
+
+/*#region swtich*/
+/* From Uiverse.io by andrew-demchenk0 */ 
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #73C0FC;
+    transition: .4s;
+    border-radius: 30px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    left: 2px;
+    bottom: 2px;
+    z-index: 2;
+    background-color: #e8e8e8;
+    transition: .4s;
+  }
+  
+  .sun svg {
+    position: absolute;
+    top: 6px;
+    left: 36px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .moon svg {
+    fill: #73C0FC;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* .switch:hover */.sun svg {
+    animation: rotate 15s linear infinite;
+  }
+  
+  @keyframes rotate {
+   
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* .switch:hover */.moon svg {
+    animation: tilt 5s linear infinite;
+  }
+  
+  @keyframes tilt {
+   
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    25% {
+      transform: rotate(-10deg);
+    }
+  
+    75% {
+      transform: rotate(10deg);
+    }
+  
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  .input:checked + .slider {
+    background-color: #183153;
+  }
+  
+  .input:focus + .slider {
+    box-shadow: 0 0 1px #183153;
+  }
+  
+  .input:checked + .slider:before {
+    transform: translateX(30px);
+  }
+
+  /*endregion Switch*/
+
 @media (min-width:768px) {
 
 
+    body.dark-mode .about{
+        background-color: #1E1E1E; /* Fondo principal */
+        color: #E0E0E0; /* Texto principal */
+    }
+
+    body.dark-mode .position-rel {
+        background-color: #1E1E1E; /* Fondo secundario */
+        color: #E0E0E0; /* Texto principal */
+    }
+
+   
     .nav__menu{
         display: none;
     }
 
     .nav__list{
+        margin-left: 50px;
         position: static;
         background-color:transparent;
         padding: 0;
 
         display: flex;
         gap: 2rem;
-        font-size: 20px;
+        font-size: 16px;
 
         list-style: none;
         
         transform:unset;
         transition:none;
     }
+
+    .position-rel {
+        position: sticky;
+        top: 0; /* Asegúrate de que se quede en la parte superior */
+        z-index: 1000; /* Para asegurarte de que esté encima de otros elementos */
+        background-color: white; /* Si necesitas que sea visible sobre otros elementos */
+    }
+
+    
 
     .nav__list--show{
         transform:unset;
@@ -505,8 +681,9 @@ body{
 
     .footer{
         text-align: center;
+        background-color: #1E1E1E;
     }
-
+    
     
 
 }

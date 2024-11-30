@@ -5,6 +5,22 @@ document.addEventListener('DOMContentLoaded', function() {
   ScrollToTopScript();
   // AnimationCards();
   // callModal();
+
+  // Seleccionamos el checkbox y el body
+  const checkbox = document.querySelector('.input');
+  const body = document.body;
+
+  // Escuchar el evento "change" del checkbox
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+        // Activar modo oscuro
+        body.classList.add('dark-mode');
+    } else {
+        // Desactivar modo oscuro
+        body.classList.remove('dark-mode');
+    }
+  });
+  
 });
 
 //Info for projects
