@@ -47,9 +47,12 @@ function NavScript() {
   const links = document.querySelectorAll('.nav__link');
   const body = document.body;
 
-  // Define las rutas de las imágenes
-  const menuOpenImage = '/src/assets/iconClose.png';
-  const menuCloseImage = '/src/icons/menu.svg';
+  // Detecta si estás en index.html o en otra vista
+  const isIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
+
+  // Define rutas según la ubicación actual
+  const menuOpenImage = isIndex ? './src/assets/iconClose.png' : '../src/assets/iconClose.png';
+  const menuCloseImage = isIndex ? './src/icons/menu.svg' : '../src/icons/menu.svg';
 
   menu.addEventListener('click', function () {
     // Alternar el menú desplegable
