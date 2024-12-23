@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-  
+document.addEventListener('DOMContentLoaded', function () {
   //Script barra de navegación
   NavScript();
   ScrollToTopScript();
@@ -13,32 +12,31 @@ document.addEventListener('DOMContentLoaded', function() {
   // Escuchar el evento "change" del checkbox
   checkbox.addEventListener('change', () => {
     if (checkbox.checked) {
-        // Activar modo oscuro
-        body.classList.add('dark-mode');
+      // Activar modo oscuro
+      body.classList.add('dark-mode');
     } else {
-        // Desactivar modo oscuro
-        body.classList.remove('dark-mode');
+      // Desactivar modo oscuro
+      body.classList.remove('dark-mode');
     }
   });
-  
 });
 
 //Info for projects
 const projectData = {
   1: {
-      img: "/assets/dotnet.svg",
-      category: "CXTD",
-      heading: "Explosión de datos",
-      resume: "Este proyecto analiza la explosión de datos en 2024.",
-      autor: "ALEROC JUN 2024"
+    img: '/assets/dotnet.svg',
+    category: 'CXTD',
+    heading: 'Explosión de datos',
+    resume: 'Este proyecto analiza la explosión de datos en 2024.',
+    autor: 'ALEROC JUN 2024',
   },
   2: {
-      img: "/assets/java.svg",
-      category: "Let’s Be Encrypt",
-      heading: "Encriptamiento de contraseñas Online",
-      resume: "Proyecto enfocado en encriptar contraseñas de manera segura.",
-      autor: "ALEROC FEB 2024"
-  }
+    img: '/assets/java.svg',
+    category: 'Let’s Be Encrypt',
+    heading: 'Encriptamiento de contraseñas Online',
+    resume: 'Proyecto enfocado en encriptar contraseñas de manera segura.',
+    autor: 'ALEROC FEB 2024',
+  },
 };
 
 //functions
@@ -50,8 +48,8 @@ function NavScript() {
   const body = document.body;
 
   // Define las rutas de las imágenes
-  const menuOpenImage = './assets/iconClose.png';
-  const menuCloseImage = './assets/menu.svg';
+  const menuOpenImage = './src/assets/iconClose.png';
+  const menuCloseImage = './src/icons/menu.svg';
 
   menu.addEventListener('click', function () {
     // Alternar el menú desplegable
@@ -96,7 +94,6 @@ function ScrollToTopScript() {
   });
 }
 
-
 // Función para cargar información en el modal
 function LoadInfoModal(projectId) {
   const data = projectData[projectId];
@@ -104,31 +101,32 @@ function LoadInfoModal(projectId) {
   if (!data) return; // Si no hay datos para el proyecto, no hace nada
 
   // Seleccionar elementos del modal
-  const modalImage = document.getElementById("modal-image");
-  const modalCategory = document.getElementById("modal-category");
-  const modalHeading = document.getElementById("modal-heading");
-  const modalResume = document.getElementById("modal-resume");
-  const modalAutor = document.getElementById("modal-autor");
+  const modalImage = document.getElementById('modal-image');
+  const modalCategory = document.getElementById('modal-category');
+  const modalHeading = document.getElementById('modal-heading');
+  const modalResume = document.getElementById('modal-resume');
+  const modalAutor = document.getElementById('modal-autor');
 
   // Actualizar el contenido del modal
-  if (modalImage) modalImage.src = data.img || "default-image.jpg";
-  if (modalCategory) modalCategory.textContent = data.category || "Sin categoría";
-  if (modalHeading) modalHeading.textContent = data.heading || "Sin título";
-  if (modalResume) modalResume.textContent = data.resume || "Sin resumen";
-  if (modalAutor) modalAutor.textContent = data.autor || "Autor desconocido";
+  if (modalImage) modalImage.src = data.img || 'default-image.jpg';
+  if (modalCategory)
+    modalCategory.textContent = data.category || 'Sin categoría';
+  if (modalHeading) modalHeading.textContent = data.heading || 'Sin título';
+  if (modalResume) modalResume.textContent = data.resume || 'Sin resumen';
+  if (modalAutor) modalAutor.textContent = data.autor || 'Autor desconocido';
 }
 
 // Escuchar clics en las tarjetas de proyectos
-document.querySelectorAll(".proyect-card").forEach((card) => {
-  card.addEventListener("click", () => {
-      const projectId = card.getAttribute("data-value");
-      LoadInfoModal(projectId); // Llama la función con el ID del proyecto
+document.querySelectorAll('.proyect-card').forEach((card) => {
+  card.addEventListener('click', () => {
+    const projectId = card.getAttribute('data-value');
+    LoadInfoModal(projectId); // Llama la función con el ID del proyecto
   });
 });
 
 // function callModal(){
 //   document.getElementById('loadModalTrigger').addEventListener('click', () => {
-    
+
 //     // Carga el modal desde otro archivo
 //     fetch('./app/components/modal.html') // Ruta del archivo HTML que contiene el modal
 //         .then(response => response.text())
