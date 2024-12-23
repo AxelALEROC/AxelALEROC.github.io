@@ -52,7 +52,7 @@ function NavScript() {
 
   // Define rutas según la ubicación actual
   const menuOpenImage = isIndex ? './src/assets/iconClose.png' : '../src/assets/iconClose.png';
-  const menuCloseImage = isIndex ? './src/icons/menu.svg' : '../src/icons/menu.svg';
+  const menuCloseImage = isIndex ? './src/icons/menu.svg' : '../src/icons/menu.svg'; 
 
   menu.addEventListener('click', function () {
     // Alternar el menú desplegable
