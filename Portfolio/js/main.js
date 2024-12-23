@@ -48,8 +48,8 @@ function NavScript() {
   const body = document.body;
 
   // Define las rutas de las imágenes
-  const menuOpenImage = './src/assets/iconClose.png';
-  const menuCloseImage = './src/icons/menu.svg';
+  const menuOpenImage = '/src/assets/iconClose.png';
+  const menuCloseImage = '/src/icons/menu.svg';
 
   menu.addEventListener('click', function () {
     // Alternar el menú desplegable
@@ -124,23 +124,23 @@ document.querySelectorAll('.proyect-card').forEach((card) => {
   });
 });
 
-// function callModal(){
-//   document.getElementById('loadModalTrigger').addEventListener('click', () => {
+function callModal(){
+  document.getElementById('loadModalTrigger').addEventListener('click', () => {
 
-//     // Carga el modal desde otro archivo
-//     fetch('./app/components/modal.html') // Ruta del archivo HTML que contiene el modal
-//         .then(response => response.text())
-//         .then(data => {
-//             // Inserta el contenido del modal en el contenedor
-//             document.getElementById('modalContainer').innerHTML = data;
+    // Carga el modal desde otro archivo
+    fetch('./app/components/modal.html') // Ruta del archivo HTML que contiene el modal
+        .then(response => response.text())
+        .then(data => {
+            // Inserta el contenido del modal en el contenedor
+            document.getElementById('modalContainer').innerHTML = data;
 
-//             // Inicializa y muestra el modal
-//             const modal = new bootstrap.Modal(document.getElementById('proyectModal'));
-//             modal.show();
-//         })
-//         .catch(error => console.error('Error al cargar el modal:', error));
-//   });
-// }
+            // Inicializa y muestra el modal
+            const modal = new bootstrap.Modal(document.getElementById('proyectModal'));
+            modal.show();
+        })
+        .catch(error => console.error('Error al cargar el modal:', error));
+  });
+}
 
 // function AnimationCards(){
 //   // Card hover animation following the pointer
