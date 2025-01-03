@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //Info for projects
 const projectData = {
   1: {
-    img: '../src/assets/letsbesec_img.png',
+    img: './src/assets/letsbesec_img.png',
     category: 'Let’s Be Encrypt',
     heading: 'Encriptamiento de contraseñas Online',
     resume: 'Proyecto enfocado en encriptar contraseñas de manera segura.',
