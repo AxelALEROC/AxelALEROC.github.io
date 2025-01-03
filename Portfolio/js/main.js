@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // AnimationCards();
   // callModal();
 
-  // Seleccionamos el checkbox y el body
+  // Select the checkbox for change body
   const checkbox = document.querySelector('.input');
   const body = document.body;
 
@@ -24,18 +24,12 @@ document.addEventListener('DOMContentLoaded', function () {
 //Info for projects
 const projectData = {
   1: {
-    img: '/assets/dotnet.svg',
-    category: 'CXTD',
-    heading: 'Explosión de datos',
-    resume: 'Este proyecto analiza la explosión de datos en 2024.',
-    autor: 'ALEROC JUN 2024',
-  },
-  2: {
-    img: '/assets/java.svg',
+    img: '../src/assets/letsbesec_img.png',
     category: 'Let’s Be Encrypt',
     heading: 'Encriptamiento de contraseñas Online',
     resume: 'Proyecto enfocado en encriptar contraseñas de manera segura.',
     autor: 'ALEROC FEB 2024',
+    url: './views/letsBeSecure.html',
   },
 };
 
@@ -48,11 +42,17 @@ function NavScript() {
   const body = document.body;
 
   // Detecta si estás en index.html o en otra vista
-  const isIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
+  const isIndex =
+    window.location.pathname.endsWith('index.html') ||
+    window.location.pathname === '/';
 
   // Define rutas según la ubicación actual
-  const menuOpenImage = isIndex ? './src/assets/iconClose.png' : '../src/assets/iconClose.png';
-  const menuCloseImage = isIndex ? './src/icons/menu.svg' : '../src/icons/menu.svg'; 
+  const menuOpenImage = isIndex
+    ? './src/assets/iconClose.png'
+    : '../src/assets/iconClose.png';
+  const menuCloseImage = isIndex
+    ? './src/icons/menu.svg'
+    : '../src/icons/menu.svg';
 
   menu.addEventListener('click', function () {
     // Alternar el menú desplegable
@@ -109,6 +109,7 @@ function LoadInfoModal(projectId) {
   const modalHeading = document.getElementById('modal-heading');
   const modalResume = document.getElementById('modal-resume');
   const modalAutor = document.getElementById('modal-autor');
+  const modalButton = document.getElementById('modal-button');
 
   // Actualizar el contenido del modal
   if (modalImage) modalImage.src = data.img || 'default-image.jpg';
@@ -117,6 +118,12 @@ function LoadInfoModal(projectId) {
   if (modalHeading) modalHeading.textContent = data.heading || 'Sin título';
   if (modalResume) modalResume.textContent = data.resume || 'Sin resumen';
   if (modalAutor) modalAutor.textContent = data.autor || 'Autor desconocido';
+  if (modalButton) {
+    modalButton.textContent = 'Ir a la página';
+    modalButton.onclick = function () {
+      location.href = data.url || '#';
+    };
+  }
 }
 
 // Escuchar clics en las tarjetas de proyectos
@@ -127,21 +134,22 @@ document.querySelectorAll('.proyect-card').forEach((card) => {
   });
 });
 
-function callModal(){
+function callModal() {
   document.getElementById('loadModalTrigger').addEventListener('click', () => {
-
     // Carga el modal desde otro archivo
     fetch('./app/components/modal.html') // Ruta del archivo HTML que contiene el modal
-        .then(response => response.text())
-        .then(data => {
-            // Inserta el contenido del modal en el contenedor
-            document.getElementById('modalContainer').innerHTML = data;
+      .then((response) => response.text())
+      .then((data) => {
+        // Inserta el contenido del modal en el contenedor
+        document.getElementById('modalContainer').innerHTML = data;
 
-            // Inicializa y muestra el modal
-            const modal = new bootstrap.Modal(document.getElementById('proyectModal'));
-            modal.show();
-        })
-        .catch(error => console.error('Error al cargar el modal:', error));
+        // Inicializa y muestra el modal
+        const modal = new bootstrap.Modal(
+          document.getElementById('proyectModal')
+        );
+        modal.show();
+      })
+      .catch((error) => console.error('Error al cargar el modal:', error));
   });
 }
 

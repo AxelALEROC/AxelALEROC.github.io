@@ -1,0 +1,92 @@
+.encrypt-section {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.title {
+    font-size: 24px;
+    color: #333;
+}
+
+.description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.password-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.password-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.encrypt-button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.encrypt-button:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    margin-top: 20px;
+}
+
+.result-title {
+    font-size: 18px;
+    color: #333;
+}
+
+.encrypted-password {
+    word-wrap: break-word;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}
+
+.disclaimer-container {
+    
+    background-color: #fdf8e4;
+    border: 1px solid #f0e68c;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+}
+
+.disclaimer-container .project-title {
+    font-size: 24px;
+    color: #8b7500; /* Color dorado oscuro para destacar */
+}
+
+.disclaimer-container .project-description {
+    font-size: 14px;
+    color: #5a5a5a;
+    line-height: 1.5;
+}
+

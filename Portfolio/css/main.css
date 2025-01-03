@@ -258,6 +258,11 @@ body {
   transition: transform 0.2s ease-in-out;
 }
 
+body.dark-mode .proyect-card{
+  background-color: #1c1c1c;
+  border: gainsboro;
+}
+
 .proyect-card:hover {
   transform: scale(0.99);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -265,7 +270,7 @@ body {
 
 .card-image {
   background-color: transparent;
-  width: 100%;
+  width: auto;
   height: 200px;
   border-radius: 6px 6px 0 0;
   overflow: hidden; /* Asegura que nada sobresalga */
@@ -278,9 +283,9 @@ body {
   border-radius: 6px 6px 0 0; /* Respeta los bordes redondeados */
 }
 
-.card-image:hover {
+/* .card-image:hover {
   transform: scale(0.98);
-}
+} */
 
 .category-proyect {
   text-transform: uppercase;
@@ -486,6 +491,13 @@ body.dark-mode a {
   color: #64b5f6; /* Azul cian para enlaces */
 }
 
+body.dark-mode .modal-content{
+  background-color: #1C1C1C;
+}
+
+body.dark-mode .heading-proyect{
+  color: gainsboro;
+}
 /*endregion darkmode*/
 
 /*#region swtich*/
